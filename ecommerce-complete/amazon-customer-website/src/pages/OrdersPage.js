@@ -9,7 +9,7 @@ const OrdersPage = () => {
   const [loading, setLoading] = useState(true);
   const { user } = useAuth();
 
-  const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+  const API_BASE = process.env.REACT_APP_API_URL || '/api';
   const token = localStorage.getItem('authToken');
 
   useEffect(() => {

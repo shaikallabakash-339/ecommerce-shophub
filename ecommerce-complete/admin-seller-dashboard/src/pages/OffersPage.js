@@ -4,7 +4,7 @@ import axios from 'axios';
 const OffersPage = () => {
   const [offers, setOffers] = useState([]);
   const [formData, setFormData] = useState({ productId: '', discountPercent: '', title: '', startDate: '', endDate: '' });
-  const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+  const API_BASE = process.env.REACT_APP_API_URL || '/api';
   const token = localStorage.getItem('adminToken');
 
   useEffect(() => {
