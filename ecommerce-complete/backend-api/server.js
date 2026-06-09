@@ -79,6 +79,14 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/health', (req, res) => {
+  res.json({ status: 'Server running', timestamp: new Date() });
+});
+
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'Server running', timestamp: new Date() });
+});
+
 app.get('/api', (req, res) => {
   res.json({
     api: 'ShopHub API',
@@ -102,6 +110,16 @@ app.use('/api/orders', ordersRoutes);
 app.use('/api/uploads', uploadRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/payments', paymentRoutes);
+
+// API 404 handler
+app.use('/api', (req, res) => {
+  res.status(404).json({ error: 'API endpoint not found', path: req.originalUrl });
+});
+
+// 404 handler for non-API routes
+app.use((req, res) => {
+  res.status(404).json({ error: 'Route not found', path: req.originalUrl });
+});
 
 // Socket.io events
 io.on('connection', (socket) => {
