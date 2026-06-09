@@ -57,6 +57,9 @@ const ordersRoutes = require('./routes/orders');
 const uploadRoutes = require('./routes/uploads');
 const adminRoutes = require('./routes/admin');
 const paymentRoutes = require('./routes/payments');
+const searchHistoryRoutes = require('./routes/searchHistory');
+const cloudinaryUploadRoutes = require('./routes/cloudinaryUpload');
+const razorpayRoutes = require('./routes/razorpay');
 
 // Health check endpoint
 app.get('/health', (req, res) => {
@@ -89,15 +92,19 @@ app.get('/api/health', (req, res) => {
 
 app.get('/api', (req, res) => {
   res.json({
-    api: 'ShopHub API',
+    api: 'ShopHub Fashion API',
     endpoints: [
       '/api/auth',
       '/api/products',
+      '/api/products/filters/options',
       '/api/cart',
       '/api/orders',
       '/api/uploads',
       '/api/admin',
-      '/api/payments'
+      '/api/payments',
+      '/api/search-history',
+      '/api/upload/cloudinary/upload',
+      '/api/upload/cloudinary/:publicId'
     ]
   });
 });
@@ -110,6 +117,9 @@ app.use('/api/orders', ordersRoutes);
 app.use('/api/uploads', uploadRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/payments', paymentRoutes);
+app.use('/api/razorpay', razorpayRoutes);
+app.use('/api/search-history', searchHistoryRoutes);
+app.use('/api/upload', cloudinaryUploadRoutes);
 
 // API 404 handler
 app.use('/api', (req, res) => {
