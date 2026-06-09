@@ -77,3 +77,18 @@ CREATE INDEX idx_cart_user_id ON cart(user_id);
 CREATE INDEX idx_orders_user_id ON orders(user_id);
 CREATE INDEX idx_orders_status ON orders(status);
 CREATE INDEX idx_sales_offers_product_id ON sales_offers(product_id);
+
+-- Seed sample data
+INSERT INTO users (email, password, first_name, last_name, is_admin)
+VALUES
+  ('admin@shophub.com', '$2a$10$zP8a6JMDP2zOqj/1l2XQnex5mG7jH3h5cB1G1x8p5Gg5jZ4P6L7y.', 'Admin', 'User', true)
+ON CONFLICT (email) DO NOTHING;
+
+INSERT INTO products (name, description, price, category, image_url, stock)
+VALUES
+  ('Smart LED TV 55"', 'Ultra HD 4K LED TV with HDR, smart streaming apps, and voice control.', 49999.00, 'Electronics', 'https://via.placeholder.com/300x200?text=Smart+LED+TV', 20),
+  ('Wireless Noise Cancelling Headphones', 'Premium sound, long battery life, and active noise cancellation.', 12999.00, 'Audio', 'https://via.placeholder.com/300x200?text=Headphones', 50),
+  ('Modern Sofa Set', 'Comfortable 3-seater sofa set with durable fabric and modern design.', 29999.00, 'Furniture', 'https://via.placeholder.com/300x200?text=Sofa+Set', 15),
+  ('Gaming Laptop', 'High-performance laptop with RTX graphics and fast refresh rate display.', 89999.00, 'Computers', 'https://via.placeholder.com/300x200?text=Gaming+Laptop', 10),
+  ('Smartphone 128GB', 'Latest smartphone with stunning camera, fast chipset, and long-lasting battery.', 24999.00, 'Mobiles', 'https://via.placeholder.com/300x200?text=Smartphone', 35)
+ON CONFLICT DO NOTHING;

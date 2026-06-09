@@ -40,8 +40,10 @@ const pool = new Pool({
 
 // Redis Connection
 const redisClient = redis.createClient({
-  host: process.env.REDIS_HOST || 'localhost',
-  port: process.env.REDIS_PORT || 6379
+  socket: {
+    host: process.env.REDIS_HOST || 'localhost',
+    port: process.env.REDIS_PORT ? Number(process.env.REDIS_PORT) : 6379
+  }
 });
 
 redisClient.on('error', (err) => console.log('Redis Client Error', err));
@@ -59,6 +61,37 @@ const paymentRoutes = require('./routes/payments');
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ status: 'Server running', timestamp: new Date() });
+});
+
+// Make io available to routes
+app.use((req, res, next) => {
+  req.io = io;
+  next();
+});
+
+app.get('/', (req, res) => {
+  res.json({
+    service: 'ShopHub API',
+    version: '1.0',
+    status: 'ready',
+    health: '/health',
+    api: '/api/health'
+  });
+});
+
+app.get('/api', (req, res) => {
+  res.json({
+    api: 'ShopHub API',
+    endpoints: [
+      '/api/auth',
+      '/api/products',
+      '/api/cart',
+      '/api/orders',
+      '/api/uploads',
+      '/api/admin',
+      '/api/payments'
+    ]
+  });
 });
 
 // API Routes
