@@ -1,1 +1,20 @@
 everything is good can you change the entire ui it looks like amazon wesbite ui. try to change everything. ui of customer frontend only. you have change entire webiste design also. try to add home button of moderen desingn like home, cart, you, Browse in the top mention search bar to search the items.  in the below mention cards that should always rotate from left to right. to see where clothes and fashions is good.  mention those products with discount sale.  if the same customer login again try to same products. what he/she serached prevously.  try to improve good ui with stnningin in background as well as products. i want to  tell you something like this website not for ecommerce. this website is build for creating Fashion Website to attract customers of  men and womens to purchase their clothes. in low prices. compate to market prices. try to update all my requitements asap. this website is designed for Fashion hub for men & women. in this wesbite, for men the clothes, pants, shirts, underwears, jeans, with repect to clothes try to mention size of clothes. show the images of the clothes,. similarly for womens and kidsalso same shooping everyging is same but carts, adding,  for  storing images i am using cloudinary for uploading images and videos try to change this for me. i will provide you my razorpay api key . tyr to integrate with them.  once you prepare all  that time ask me m api i will provide you. can u add more featues in amdin page. in theis page add upload image button if i upload product details with image. it should be reflect in page. try to update  for women categores , sarees, tops, leggings, bras, under wear, describes the size like s, m , l xl ,xxl, for bra sizes from 20 to 45 sizes. try to add all this. my main intension is to attarct the customers in fast compated to amazon and flipkart, ajio, try to make this website asap. in ths admin panel try to update me good ui, try to categores like men, women, kids, in in this also, tyr to mention which age is sutiatbl and. in the cusitemer page, when visit any clothes she / he see after search in the belwo mention filter like which age gorup is 18-24 ex ty t ot add more. 
+
+
+Due to size limits, I recommend a phased approach:
+
+Phase 1 - Complete frontend redesign (I'll create all components):
+
+Modern HomePage with carousel
+Hero section with animated background
+Product cards with discount badges
+Filtering sidebar
+Phase 2 - Admin panel + uploads:
+
+Upload interface
+Product management with image preview
+Category management
+Phase 3 - Integrations:
+
+Cloudinary setup
+Razorpay (when you provide keys)
