@@ -43,8 +43,8 @@ router.get('/', async (req, res) => {
     }
 
     if (search) {
-      query += ' AND (name ILIKE $' + (params.length + 1) + ' OR description ILIKE $' + (params.length + 1) + ')';
-      params.push(`%${search}%`);
+      query += ' AND (name ILIKE $' + (params.length + 1) + ' OR description ILIKE $' + (params.length + 2) + ')';
+      params.push(`%${search}%`, `%${search}%`);
     }
 
     query += ' LIMIT $' + (params.length + 1) + ' OFFSET $' + (params.length + 2);
