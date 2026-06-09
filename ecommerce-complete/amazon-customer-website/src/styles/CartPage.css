@@ -1,0 +1,130 @@
+.cart-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-cart h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.cart-content {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 24px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 100px 1fr 120px 100px 80px;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.item-details h3 {
+  font-size: 14px;
+  margin: 0 0 8px 0;
+}
+
+.item-details .price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FF9900;
+}
+
+.item-quantity {
+  display: flex;
+  gap: 8px;
+}
+
+.item-quantity button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #E5E7EB;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.item-quantity input {
+  width: 40px;
+  text-align: center;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+}
+
+.remove-btn {
+  padding: 8px 12px;
+  background-color: #EF4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.cart-summary {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  height: fit-content;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.summary-total {
+  border-top: 2px solid #E5E7EB;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.summary-total .summary-row {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .cart-content {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    grid-template-columns: 80px 1fr;
+    gap: 12px;
+  }
+
+  .item-quantity,
+  .item-total,
+  .remove-btn {
+    grid-column: 2;
+  }
+}
